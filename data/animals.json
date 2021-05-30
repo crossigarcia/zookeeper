@@ -108,6 +108,26 @@
         "hungry"
       ],
       "id": "10"
+    },
+    {
+      "name": "Uva",
+      "species": "puppers",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "hungry",
+        "goofy",
+        "talkative"
+      ],
+      "id": "11"
+    },
+    {
+      "name": "Tipsy",
+      "species": "puppers",
+      "diet": "piscivore",
+      "personalityTraits": [
+        "hungry"
+      ],
+      "id": "12"
     }
   ]
 }

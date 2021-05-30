@@ -10,6 +10,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 //parse incoming json data
 app.use(express.json());
+app.use(express.static('public'));
 
 function filterByQuery(query, animalsArray) {
    let personalityTraitsArray = [];
@@ -92,15 +93,28 @@ app.post('/api/animals', (req, res) => {
    // set id based on what the next index will be
    req.body.id = animals.length.toString();
 
-   //validate data
    if (!validateAnimal(req.body)) {
       res.status(400).send('The animal is not properly formatted.');
    } else {
-     //add animal to json file and animals array
      const animal = createNewAnimal(req.body, animals);
-     //req.body is where incoming content will be
      res.json(animal);
    }
+});
+
+app.get('/', (req, res) => {
+   res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+app.get('/animals', (req, res) => {
+   res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+
+app.get('/zookeepers', (req, res) => {
+   res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+
+app.get('*', (req, res) => {
+   res.sendFile(path.join(__dirname, './public/idex.html'));
 });
 
 app.listen(PORT, () => {
