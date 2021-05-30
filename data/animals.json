@@ -128,6 +128,15 @@
         "hungry"
       ],
       "id": "12"
+    },
+    {
+      "name": "Uva",
+      "species": "doge",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "zany"
+      ],
+      "id": "13"
     }
   ]
 }

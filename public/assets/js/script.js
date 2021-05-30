@@ -1,5 +1,3 @@
-// const { stringify } = require("querystring");
-
 const $animalForm = document.querySelector('#animal-form');
 
 const handleAnimalFormSubmit = event => {
